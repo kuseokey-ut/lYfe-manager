@@ -1,0 +1,42 @@
+:root{--bg:#f4f6f5;--fg:#18211f;--card:#fff;--bd:#d9e0dd;--ac:#0f766e;--mut:#62706b;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#101615;--fg:#e6edeb;--card:#182120;--bd:#2a3633;--ac:#14a398;--mut:#91a19c}}
+*{box-sizing:border-box}html,body{margin:0}
+body{font:15px/1.4 system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--fg);padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+input,select,textarea,button{font:inherit;font-size:16px;color:inherit}
+button{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;cursor:pointer;white-space:nowrap}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+button.on,.pri{background:var(--ac);border-color:var(--ac);color:#fff}
+header{display:flex;flex-wrap:wrap;gap:6px 12px;padding:8px 12px;background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:5}
+nav,#acts{display:flex;gap:4px;overflow-x:auto;max-width:100%}nav{flex:1}
+#bar{display:flex;flex-wrap:wrap;gap:6px;padding:8px 12px}
+input:not([type=checkbox]),select,textarea{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:6px 8px}
+#bar input{flex:1;min-width:140px}
+main{padding:4px 12px 80px}
+ul{list-style:none;margin:0;padding-left:18px}main>ul{padding-left:0}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--bd);border-radius:8px;padding:6px 8px;margin:4px 0}
+.row.done .ti{text-decoration:line-through;opacity:.55}
+.foc{box-shadow:0 0 0 2px #e0a100}
+.ti{flex:1;min-width:120px;cursor:pointer}.sp{width:36px}
+small{color:var(--mut);font-size:12px}.lb{font-style:normal;font-size:12px;background:var(--bd);border-radius:10px;padding:1px 8px}
+small.late{color:#d93025}small.p3{color:#d93025}small.p2{color:#c25e00}
+.board{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.board section{background:var(--bd);border-radius:10px;padding:8px}.board h3{margin:2px 0 6px}
+.card{background:var(--card);border:1px solid var(--bd);border-left:4px solid var(--bd);border-radius:8px;padding:8px;margin:6px 0}
+.mv{display:flex;justify-content:space-between;margin-top:6px}
+.calbar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:6px 0}.calbar b{flex:1;min-width:140px}
+.grid{display:grid;gap:4px;grid-template-columns:repeat(7,minmax(0,1fr))}
+.wd{text-align:center;color:var(--mut);font-size:12px}
+.cell{background:var(--card);border:1px solid var(--bd);border-radius:6px;min-height:84px;padding:3px;overflow:hidden;cursor:pointer}.cell.dim{opacity:.45}.cell.today{border-color:var(--ac);border-width:2px}
+.chip{font-size:11px;background:var(--bd);border-left:3px solid var(--ac);border-radius:4px;padding:1px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chip.done{text-decoration:line-through;opacity:.6}
+@media(max-width:700px){.board,.grid.w{grid-template-columns:1fr}.cell{min-height:64px}}
+dialog{background:var(--bg);color:var(--fg);border:1px solid var(--bd);border-radius:12px;width:min(560px,94vw);max-height:90vh;overflow:auto;padding:14px}
+dialog::backdrop{background:#0008}
+dialog input:not([type=checkbox]):not([type=color]),dialog textarea{width:100%}
+dialog label{display:block;font-size:12px;color:var(--mut);margin:6px 0}
+dialog input[type=color]{width:44px;padding:0;vertical-align:middle}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:6px}
+.btns{display:flex;gap:6px;justify-content:flex-end;margin-top:10px}
+#login{max-width:320px;margin:18vh auto;display:flex;flex-direction:column;gap:8px;padding:0 16px}#err{color:#d93025;margin:0}
+#toast{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translate(-50%,20px);background:#222;color:#fff;padding:8px 14px;border-radius:20px;opacity:0;pointer-events:none;transition:.2s;z-index:99}#toast.on{opacity:1;transform:translate(-50%,0)}
+.empty{color:var(--mut);text-align:center;padding:30px}
+[hidden]{display:none!important}
